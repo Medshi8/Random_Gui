@@ -1,7 +1,3 @@
-# Creat the Error Windows AT: getFilePath / chooseTypeOfAnalytics / Calc_Yearly_Moyen
-# Done!
-
-
 import csv
 import pandas as pd
 try:
@@ -39,11 +35,6 @@ def readData ():
         return False
        # getFilePath ()
 
-def test():
-    pass
-
-
-
 def showSumResult (mrSum, MrType):
     # MrType is the the of Date : Day/ year / month 
     messagebox.showinfo('Final Sum', 'The Sum For this {0} is: {1}'.format(MrType, str(mrSum)))
@@ -61,10 +52,6 @@ def getFilePath ():
             
             if a:
                 tk.messagebox.showinfo('Sucess Importing File','Your File has Been imported\nHere is the Headers of your File\nPlease check the headers at the top menu')
-                #succLab.config(font=('helvetica', 20))
-                # 300 and 60 for the positining
-                #canvas1.create_window(300, 350, window=succLab)
-
                 checkHeaders()
             else:
                 tk.messagebox.showinfo("Wrong Extension", "The File You Have Picked Isn\'t CSV!\nPlease Convert it or Choose Another File with CSV Extension!")
@@ -205,7 +192,6 @@ def chooseTypeOfAnalytics ():
 def checkHeaders ():
     
     readData()
-    # Space To put the Headers in the new window
     # Here it does check if the file has been imported or not
     if readData():
     
@@ -227,14 +213,7 @@ def checkHeaders ():
         tk.messagebox.askretrycancel('Erro', 'You Did not imported any File yet\nPlease try again!')
         
             
-        
-    #headWin.mainloop()
-    
-# This function supposed to be called after we click the Import File button
-# to get the path   
 
-
-# This function Calculate Daily Tempature
 def Calc_Daily_Moyen(years = None, months = None, days = None):
     
     def secondEscapeLoL(years, months, days):
@@ -282,7 +261,6 @@ def Calc_Daily_Moyen(years = None, months = None, days = None):
         
         showSumResult (DailySumLeL, 'Day')
     
- # This Function Calculate Monthly Tempature
 def Calc_Monthly_Moyen(years = None, months = None ):
         montho = monthTxtZone.get()
         yearso = yearTxtZone.get()
@@ -433,9 +411,6 @@ my_menu.add_cascade(label = 'Help', menu=help_menu)
 help_menu.config(font=('helvetica', 12, 'bold'))
 # THIS BUTTON NEED TO BE FIXED
 help_menu.add_command(label="About Us", command= aboutUs)
-
-
-
 
 root.mainloop()
 
